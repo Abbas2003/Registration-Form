@@ -35,7 +35,7 @@ This project is a simple web application that allows students to register themse
 ## Project Setup
 1. Clone the repository to your local machine:
     ```sh
-      git clone https://github.com/Abbas2003/student-registration-form.git
+      git clone https://github.com/Abbas2003/Registration-Form.git
       cd student-registration-form 
     ```
 2. Include the Firebase SDK and initialize Firebase with your project configuration in your HTML file.
