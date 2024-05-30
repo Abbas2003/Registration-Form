@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js";
-import { getDatabase, ref, set, push, onValue } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-database.js";
+import { getDatabase, ref, set, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -73,7 +73,8 @@ window.submitData = function () {
     var userDataObj = {
       name: name.value,
       rollNum: rollNum.value,
-      course: courseDropDown.childNodes[3].value
+      course: courseDropDown.childNodes[3].value,
+      // key: 
     }
 
     // Sending data to DB
@@ -128,9 +129,20 @@ function displayData(allData) {
       const courseCell = document.createElement('td');
       courseCell.textContent = student['course'];
       row.appendChild(courseCell);
-
+      
+      const actionCell = document.createElement('button');
+      actionCell.textContent = "Delete";
+      actionCell.setAttribute('onclick', `removeData("${student["key"]}")`)
+      actionCell.setAttribute('class', "btn btn-danger w-100")
+      row.appendChild(actionCell);
+      
+      console.log("STUDENT = ",student["key"]) 
       tableBody.appendChild(row);
     }
   }
 }
 
+window.removeData = function(id){
+  var reference = ref(db, `Student Data/${id}`)
+  remove(reference)
+}
