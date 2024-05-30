@@ -21,23 +21,23 @@
       <div class="d-flex flex-column align-items-center justify-content-between gap-3">
         <div class="input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">Student Name</span>
-          <input type="text" id="name" class="form-control shadow-none" placeholder="Enter your name" aria-label="Username" aria-describedby="addon-wrapping">
+          <input type="text" id="name" required class="form-control shadow-none" placeholder="Enter your name" aria-label="Username" aria-describedby="addon-wrapping">
         </div>
         <div class="input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">Father Name</span>
-          <input type="text" id="fatherName" class="form-control shadow-none" placeholder="Enter your father name" aria-label="Username" aria-describedby="addon-wrapping">
+          <input type="text" id="fatherName" class="form-control shadow-none" placeholder="Enter your father name" aria-label="Username" required aria-describedby="addon-wrapping">
         </div>
         <div class="input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">Contact</span>
-          <input type="text" id="contact" class="form-control shadow-none" placeholder="Enter your father name" aria-label="Username" aria-describedby="addon-wrapping">
+          <input type="number" id="contact" class="form-control shadow-none" placeholder="Enter your contact number" aria-label="Username" required aria-describedby="addon-wrapping">
         </div>
         <div class="input-group flex-nowrap">
-          <span class="input-group-text" id="addon-wrapping">Father Name</span>
-          <input type="text" id="fatherName" class="form-control shadow-none" placeholder="Enter your father name" aria-label="Username" aria-describedby="addon-wrapping">
+          <span class="input-group-text" id="addon-wrapping">CNIC Number</span>
+          <input type="number" maxlength="13" required id="cnic" class="form-control shadow-none" placeholder="Enter your CNIC number" aria-label="Username" aria-describedby="addon-wrapping">
         </div>
         <div class="input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping">Roll Number</span>
-          <input type="text" id="rollNum" class="form-control shadow-none" placeholder="Enter roll number" aria-label="Username" aria-describedby="addon-wrapping">
+          <input type="text" id="rollNum" required class="form-control shadow-none" placeholder="Enter roll number" aria-label="Username" aria-describedby="addon-wrapping">
         </div>
         <div class="input-group mb-3" id="courseDropDown">
           <label class="input-group-text" for="inputGroupSelect01">Courses</label>
@@ -67,6 +67,9 @@
         <thead>
           <tr class="text-center fs-5">
             <th>Student Name</th>
+            <th>Father Name</th>
+            <th>Contact</th>
+            <th>CNIC No.</th>
             <th>Roll Number</th>
             <th>Course</th>
             <th>Action</th>

@@ -62,19 +62,24 @@ function getData() {
 
 // --------- REGISTRATION FORM --------- //
 var name = document.getElementById("name")
+var fatherName = document.getElementById("fatherName")
+var contact = document.getElementById("contact")
+var cnic = document.getElementById("cnic")
 var rollNum = document.getElementById("rollNum")
 var courseDropDown = document.getElementById("courseDropDown")
 
 
 window.submitData = function () {
 
-  if (name.value && rollNum.value && courseDropDown.childNodes[3].value) {
+  if (name.value && rollNum.value && courseDropDown.childNodes[3].value && fatherName.value && cnic.value && contact.value) {
     // Student data object
     var userDataObj = {
       name: name.value,
+      fatherName: fatherName.value,
+      contact: contact.value,
+      cnic: cnic.value,
       rollNum: rollNum.value,
-      course: courseDropDown.childNodes[3].value,
-      // key: 
+      course: courseDropDown.childNodes[3].value, 
     }
 
     // Sending data to DB
@@ -84,6 +89,9 @@ window.submitData = function () {
 
     // Fields will be set empty
     name.value = ''
+    fatherName.value = ''
+    contact.value = ''
+    cnic.value = ''
     rollNum.value = ''
     courseDropDown.childNodes[3].value = ''
 
@@ -121,6 +129,18 @@ function displayData(allData) {
       const nameCell = document.createElement('td');
       nameCell.textContent = student['name'];
       row.appendChild(nameCell);
+      
+      const fnameCell = document.createElement('td');
+      fnameCell.textContent = student['fatherName'];
+      row.appendChild(fnameCell);
+
+      const contactCell = document.createElement('td');
+      contactCell.textContent = student['contact'];
+      row.appendChild(contactCell);
+
+      const cnicCell = document.createElement('td');
+      cnicCell.textContent = student['cnic'];
+      row.appendChild(cnicCell);
 
       const rollNumberCell = document.createElement('td');
       rollNumberCell.textContent = student['rollNum'];
